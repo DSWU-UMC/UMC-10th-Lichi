@@ -4,21 +4,31 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>리치의 투두</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <header>
       <h1>UMC Study Plan</h1>
     </header>
     <hr />
-    <main>
+    <div class="textBox">
       <input type="text" placeholder="스터디 계획을 작성해 보세요!" />
-      <section>
+    </div>
+    <main>
+      <section class="todoList">
         <h3>해야 할 일</h3>
+        <div class="lists">
+          <div id="todo"></div>
+          <button>완료</button>
+        </div>
       </section>
-      <section>
+      <section class="todoList">
         <h3>해낸 일</h3>
+        <div class="lists">
+          <div id="todoDone"></div>
+          <button>삭제</button>
+        </div>
       </section>
     </main>
-    <footer>리치가 만들었어요 데헷</footer>
   </body>
 </html>
