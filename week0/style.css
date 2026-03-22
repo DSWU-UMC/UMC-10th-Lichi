@@ -30,6 +30,13 @@ main {
   flex-direction: column;
 }
 
+.todo-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* 이거 추가 */
+  margin-bottom: 0.5rem;
+  width: 15rem; /* 고정 너비 필요! 이게 없으면 안 먹혀 */
+}
 .lists {
   display: flex;
   flex-direction: row;

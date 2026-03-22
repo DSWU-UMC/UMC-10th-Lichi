@@ -12,23 +12,26 @@
     </header>
     <hr />
     <div class="textBox">
-      <input type="text" placeholder="스터디 계획을 작성해 보세요!" />
+      <input
+        id="todoInput"
+        type="text"
+        placeholder="스터디 계획을 작성해 보세요!"
+      />
     </div>
     <main>
       <section class="todoList">
         <h3>해야 할 일</h3>
         <div class="lists">
           <div id="todo"></div>
-          <button>완료</button>
         </div>
       </section>
       <section class="todoList">
         <h3>해낸 일</h3>
         <div class="lists">
           <div id="todoDone"></div>
-          <button>삭제</button>
         </div>
       </section>
     </main>
+    <script src="script.js"></script>
   </body>
 </html>
