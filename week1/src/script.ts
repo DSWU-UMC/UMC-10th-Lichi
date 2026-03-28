@@ -1,6 +1,3 @@
-// const todos = document.querySelector<HTMLElement>(".render-container__todos");
-// const todoDone = document.querySelector("render-container__completed");
-
 const inputTodo: HTMLInputElement | null = document.querySelector("#inputTodo");
 const addBtn = document.querySelector<HTMLButtonElement>(
   ".todo-container__button",
@@ -8,16 +5,25 @@ const addBtn = document.querySelector<HTMLButtonElement>(
 const todosArr: string[] = [];
 const todoDoneArr: string[] = [];
 
-// 먼저 할 일을 입력하겠지
-// 입력하고 나서 엔터를 누르거나 추가 버튼을 누르겠지 둘 중 하나
-// -> 여기서는 addEventListener을 사용해서
 // 누른 다음에 할 일 목록에 뿅! 생김
 // 할 일 목록에서 완료를 누르면
 // 완료 목록으로 이동
 // 완료 목록에서 삭제하면
 // 완전히 사라짐
 
-// 입력 후 엔터 혹은 추가 버튼 누르는 코드
+function render() {
+  // 할 일 목록에 생기도록
+  // div 태그 - 글자 생성
+  // 글자 생성하면서 버튼도 생성
+  // 완료 버튼 눌렀을 때 함수를 따로 빼면 어떨까 싶음
+  // 완료 목록에 생기도록
+  // todosArr에 있던 걸 todoDoneArr로 옮겨지도록
+  // 그 다음에 div 태그 - 글자 생성
+  // 글자 생성하면서 삭제 버튼도 생성
+  // 삭제 버튼 눌렀으면 todoDoneArr에서 삭제 *인덱스에 해당하는 걸로
+}
+
+// 입력 후 엔터 버튼 누름
 inputTodo?.addEventListener("keydown", (e) => {
   e.preventDefault();
   if (e.key === "Enter") {
@@ -25,6 +31,17 @@ inputTodo?.addEventListener("keydown", (e) => {
       todosArr.push(inputTodo.value);
       inputTodo.value = "";
       console.log("버튼 눌림");
+      render();
     }
+  }
+});
+// 입력 후 클릭 버튼 누름
+addBtn?.addEventListener("click", (e) => {
+  e.preventDefault();
+  if (inputTodo) {
+    todosArr.push(inputTodo.value);
+    inputTodo.value = "";
+    console.log("클릭함");
+    render();
   }
 });

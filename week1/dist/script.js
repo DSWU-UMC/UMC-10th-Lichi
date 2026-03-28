@@ -13,3 +13,11 @@ inputTodo === null || inputTodo === void 0 ? void 0 : inputTodo.addEventListener
         }
     }
 });
+addBtn === null || addBtn === void 0 ? void 0 : addBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    if (inputTodo) {
+        todosArr.push(inputTodo.value);
+        inputTodo.value = "";
+        console.log("클릭함");
+    }
+});
