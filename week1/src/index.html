@@ -7,23 +7,21 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <main class="main_container">
-      <header>
+    <main class="todo-container">
+      <header class="todo-container__title">
         <h3>Lychee's TODO</h3>
       </header>
-      <div class="input_container">
+      <form class="todo-container__input">
         <input type="text" placeholder="할 일 입력" />
         <button>할 일 추가</button>
-      </div>
-
-      <section class="list_container">
-        <div class="todos">
+      </form>
+      <section class="render_container">
+        <div class="render-container__item">
           <h4>할 일</h4>
-          <!-- <div class="todo_lists"></div> -->
         </div>
-        <div class="completed">
+        <div class="render-container__item">
           <h4>완료</h4>
-          <div class="done_lists">hhhh</div>
+          <div class="render-container__completed">hhhh</div>
         </div>
       </section>
     </main>

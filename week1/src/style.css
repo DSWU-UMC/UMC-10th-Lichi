@@ -6,7 +6,7 @@ body {
   min-height: 100vh;
 }
 
-main {
+.todo-container {
   display: flex;
   flex-direction: column;
   background-color: white;
@@ -17,13 +17,13 @@ main {
   padding: 1.5rem;
 }
 
-.input_container {
+.todo-container__input {
   display: flex;
   flex-direction: row;
   gap: 0.5rem;
 }
 
-.input_container input {
+.todo-container__input input {
   flex: 1;
 }
 
@@ -38,14 +38,14 @@ header {
   text-align: center;
 }
 
-.list_container {
+.render_container {
   display: flex;
   flex-direction: row;
   gap: 1.5rem;
   justify-content: space-evenly;
 }
 
-.todos {
+.render-container__item {
   display: flex;
   flex-direction: column;
 }
@@ -53,13 +53,9 @@ header {
 h4 {
   text-align: center;
 }
-.completed {
-  display: flex;
-  flex-direction: column;
-}
 
-.todo_lists,
-.done_lists {
+.render-container__todos,
+.render-container__completed {
   background-color: #f3f3f3;
   padding: 0.4rem;
   border-radius: 5px;
