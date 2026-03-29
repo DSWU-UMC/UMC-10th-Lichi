@@ -11,7 +11,6 @@ body {
   flex-direction: column;
   background-color: white;
   width: 20rem;
-  height: 20rem;
   border-radius: 10px;
   box-shadow: 0px 0px 5px #d4d4d4;
   padding: 1.5rem;
@@ -56,6 +55,7 @@ header {
 .render-container__item {
   display: flex;
   flex-direction: column;
+  flex: 1;
 }
 
 h4 {
@@ -69,4 +69,6 @@ h4 {
   border-radius: 5px;
   box-shadow: 0px 2px 5px 0px #a4a4a4;
   margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
 }
