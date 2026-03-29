@@ -30,6 +30,7 @@ function render() {
         div.textContent = item;
         const deleteBtn = document.createElement("button");
         deleteBtn.textContent = "삭제";
+        deleteBtn.className = "render-container__deleteBtn";
         deleteBtn.addEventListener("click", () => {
             todoDoneArr.splice(index, 1);
             render();
