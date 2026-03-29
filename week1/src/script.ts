@@ -52,8 +52,8 @@ function render() {
 
 // 입력 후 엔터 버튼 누름
 inputTodo?.addEventListener("keydown", (e) => {
-  e.preventDefault();
   if (e.key === "Enter") {
+    e.preventDefault();
     if (inputTodo) {
       todosArr.push(inputTodo.value);
       inputTodo.value = "";

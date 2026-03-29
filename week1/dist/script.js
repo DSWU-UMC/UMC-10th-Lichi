@@ -39,8 +39,8 @@ function render() {
     });
 }
 inputTodo === null || inputTodo === void 0 ? void 0 : inputTodo.addEventListener("keydown", (e) => {
-    e.preventDefault();
     if (e.key === "Enter") {
+        e.preventDefault();
         if (inputTodo) {
             todosArr.push(inputTodo.value);
             inputTodo.value = "";
