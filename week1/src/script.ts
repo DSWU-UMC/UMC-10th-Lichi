@@ -1,3 +1,6 @@
+const todos = document.querySelector<HTMLElement>("#todos");
+const todoDone = document.querySelector<HTMLElement>("#todoDone");
+
 const inputTodo: HTMLInputElement | null = document.querySelector("#inputTodo");
 const addBtn = document.querySelector<HTMLButtonElement>(
   ".todo-container__button",
@@ -5,22 +8,46 @@ const addBtn = document.querySelector<HTMLButtonElement>(
 const todosArr: string[] = [];
 const todoDoneArr: string[] = [];
 
-// 누른 다음에 할 일 목록에 뿅! 생김
-// 할 일 목록에서 완료를 누르면
-// 완료 목록으로 이동
-// 완료 목록에서 삭제하면
-// 완전히 사라짐
-
 function render() {
-  // 할 일 목록에 생기도록
-  // div 태그 - 글자 생성
-  // 글자 생성하면서 버튼도 생성
-  // 완료 버튼 눌렀을 때 함수를 따로 빼면 어떨까 싶음
-  // 완료 목록에 생기도록
-  // todosArr에 있던 걸 todoDoneArr로 옮겨지도록
-  // 그 다음에 div 태그 - 글자 생성
-  // 글자 생성하면서 삭제 버튼도 생성
-  // 삭제 버튼 눌렀으면 todoDoneArr에서 삭제 *인덱스에 해당하는 걸로
+  // 초기화
+  if (todos) todos.innerHTML = "";
+  if (todoDone) todoDone.innerHTML = "";
+
+  // 배열에 들어간 할 일을 출력
+  todosArr.forEach((item, index) => {
+    // div 태그 - 글자 생성
+    const div = document.createElement("div");
+    div.className = "render-container__todos";
+    div.textContent = item;
+    // 버튼 생성
+    const doneBtn = document.createElement("button");
+    doneBtn.textContent = "완료";
+    doneBtn.addEventListener("click", () => {
+      todosArr.splice(index, 1);
+      todoDoneArr.push(item);
+      render();
+    });
+    // 실제 화면에 붙이기
+    div.appendChild(doneBtn);
+    todos?.appendChild(div);
+  });
+
+  todoDoneArr.forEach((item, index) => {
+    // div 태그, 글자 생성
+    const div = document.createElement("div");
+    div.className = "render-container__completed";
+    div.textContent = item;
+    // 버튼 생성
+    const deleteBtn = document.createElement("button");
+    deleteBtn.textContent = "삭제";
+    deleteBtn.addEventListener("click", () => {
+      todoDoneArr.splice(index, 1);
+      render();
+    });
+    // 실제 화면에 붙이기
+    div.appendChild(deleteBtn);
+    todoDone?.appendChild(div);
+  });
 }
 
 // 입력 후 엔터 버튼 누름
