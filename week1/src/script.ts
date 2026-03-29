@@ -22,6 +22,7 @@ function render() {
     // 버튼 생성
     const doneBtn = document.createElement("button");
     doneBtn.textContent = "완료";
+    doneBtn.className = "render-container__doneBtn";
     doneBtn.addEventListener("click", () => {
       todosArr.splice(index, 1);
       todoDoneArr.push(item);

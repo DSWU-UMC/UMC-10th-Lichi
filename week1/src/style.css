@@ -34,8 +34,12 @@ button {
   color: white;
   padding: 0.4rem;
 }
-
+.render-container__doneBtn {
+  margin-left: 0.5rem;
+}
 .render-container__deleteBtn {
+  margin-left: 0.5rem;
+
   background-color: rgb(214, 65, 65);
 }
 header {
