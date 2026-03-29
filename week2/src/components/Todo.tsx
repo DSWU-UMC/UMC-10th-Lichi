@@ -17,11 +17,31 @@ const Todo = () => {
       <div className="render-container">
         <div className="render-container__section">
           <h2 className="render-container__title">할 일</h2>
-          <ul id="todo-list" className="render-container__list"></ul>
+          <ul id="todo-list" className="render-container__list">
+            <li className="render-container__item">
+              <span className="render-container__item-text">고구마</span>
+              <button
+                style={{ backgroundColor: "#28a745" }}
+                className="render-container__item-button"
+              >
+                완료
+              </button>
+            </li>
+          </ul>
         </div>
         <div className="render-container__section">
           <h2 className="render-container__title">완료</h2>
-          <ul id="done-list" className="render-container__list"></ul>
+          <ul id="done-list" className="render-container__list">
+            <li className="render-container__item">
+              <span className="render-container__item-text">고구마</span>
+              <button
+                style={{ backgroundColor: "#dc3545" }}
+                className="render-container__item-button"
+              >
+                삭제
+              </button>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
