@@ -1,4 +1,8 @@
+import { useState } from "react";
+import { Todo } from "../types/todo";
+
 const Todo = () => {
+  const [todos, setTodos] = useState([]);
   return (
     <div className="todo-container">
       <h1 className="todo-container__header">Lychee's TODO</h1>
