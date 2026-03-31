@@ -1,0 +1,83 @@
+body {
+  background-color: rgb(239, 239, 239);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.todo-container {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  width: 20rem;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px #d4d4d4;
+  padding: 1.5rem;
+}
+
+.todo-container__input {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+}
+
+.todo-container__input input {
+  flex: 1;
+  /*테두리 기본 선 없애는 스타일링*/
+  outline: none;
+}
+
+button {
+  background-color: rgb(63, 82, 208);
+  border-style: none;
+  border-radius: 4px;
+  color: white;
+  padding: 0.4rem;
+  /*버튼에서 밀리는 거 해결*/
+  flex-shrink: 0;
+}
+.render-container__doneBtn {
+  margin-left: 0.5rem;
+}
+.render-container__deleteBtn {
+  margin-left: 0.5rem;
+
+  background-color: rgb(214, 65, 65);
+}
+header {
+  text-align: center;
+}
+
+.render_container {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+  justify-content: space-evenly;
+}
+
+.render-container__item {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+h4 {
+  text-align: center;
+}
+
+.render-container__todos,
+.render-container__completed {
+  background-color: #f3f3f3;
+  padding: 0.4rem;
+  border-radius: 5px;
+  box-shadow: 0px 2px 5px 0px #a4a4a4;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  /*텍스트와 버튼 중앙 정렬 문제 해결*/
+  align-items: center;
+  /*단어 줄 바꿈 해결 - 영어 혹은 숫자일 경우 공백 기준으로 끊겨 자동 줄바꿈이 일어나지 않는다 -> 가로로 계속 늘어나는 문제 발생 -> 이를 해결!*/
+  word-break: break-all;
+  overflow-wrap: break-word;
+}
