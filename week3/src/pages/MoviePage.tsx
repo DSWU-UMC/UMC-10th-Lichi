@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import type { Movie } from "../types/Movie";
+import { type MovieResponse, type Movie } from "../types/Movie";
 import MovieCard from "../components/MovieCard";
 
 const MoviePage = (): Element => {
@@ -8,7 +8,7 @@ const MoviePage = (): Element => {
 
   useEffect((): void => {
     const fetchMovies = async (): Promise<void> => {
-      const { data } = await axios(
+      const { data } = await axios.get<MovieResponse>(
         `https://api.themoviedb.org/3/movie/popular?language=en-US&page=1`,
         {
           headers: {

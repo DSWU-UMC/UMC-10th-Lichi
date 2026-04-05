@@ -14,3 +14,9 @@ export type Movie = {
   vote_average: number;
   vote_count: number;
 };
+
+export type MovieResponse = {
+  page: number;
+  total_pages: number;
+  total_results: number;
+};
