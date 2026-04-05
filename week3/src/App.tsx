@@ -1,19 +1,9 @@
 import "./App.css";
-import LycheePage from "./components/LycheePage";
-import NotFound from "./components/NotFound";
-import JoyPage from "./components/JoyPage";
+import MoviePage from "./pages/MoviePage";
 
-function App() {
-  const { pathname } = window.location;
-
-  switch (pathname) {
-    case "/lychee":
-      return <LycheePage />;
-    case "/joy":
-      return <JoyPage />;
-    default:
-      return <h1>404</h1>;
-  }
+function App(): Element {
+  // console.log(import.meta.env.VITE_TMDB_KEY);
+  return <MoviePage />;
 }
 
 export default App;
