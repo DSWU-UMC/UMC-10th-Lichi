@@ -1,10 +1,20 @@
-interface TodoFormProps {
-  input: string;
-  setInput: (input: string) => void;
-  handleSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
-}
+import { useState } from "react";
+import type { FormEvent } from "react";
+import { useTodo } from "../context/TodoContext";
 
-const TodoForm = ({ input, setInput, handleSubmit }: TodoFormProps) => {
+const TodoForm = () => {
+  const [input, setInput] = useState<string>("");
+  const { addTodo } = useTodo();
+
+  const handleSubmit = (e: FormEvent<HTMLFormElement>): void => {
+    e.preventDefault();
+    const text = input.trim(); // 앞에 공백을 잘라주는 역할 ' 123'이 들어오더라도 '123'으로 들어오게
+    if (text) {
+      addTodo(text);
+      setInput("");
+    }
+  };
+
   return (
     <form
       onSubmit={handleSubmit}
