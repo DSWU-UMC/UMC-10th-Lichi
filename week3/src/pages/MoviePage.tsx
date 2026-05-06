@@ -3,6 +3,7 @@ import axios from "axios";
 import { type MovieResponse, type Movie } from "../types/Movie";
 import MovieCard from "../components/MovieCard";
 import { LoadingSpinner } from "../components/LoadingSpinner";
+import { useParams } from "react-router-dom";
 
 const MoviePage = (): Element => {
   const [movies, setMovies] = useState<Movie[]>([]);
@@ -12,6 +13,8 @@ const MoviePage = (): Element => {
   const [isError, setISError] = useState(false);
   // 3. 페이지
   const [page, setPage] = useState(1);
+  // 4. 동적으로 카테고리 처리하기
+  const { category } = useParams<{ category: string }>();
 
   useEffect((): void => {
     const fetchMovies = async (): Promise<void> => {
@@ -20,7 +23,7 @@ const MoviePage = (): Element => {
 
       try {
         const { data } = await axios.get<MovieResponse>(
-          `https://api.themoviedb.org/3/movie/popular?language=en-US&page=${page}`,
+          `https://api.themoviedb.org/3/movie/${category}?language=en-US&page=${page}`,
           {
             headers: {
               Authorization: `Bearer ${import.meta.env.VITE_TMDB_KEY}`,
@@ -38,7 +41,7 @@ const MoviePage = (): Element => {
     };
 
     fetchMovies();
-  }, [page]);
+  }, [page, category]);
 
   if (isError) {
     return (
