@@ -54,10 +54,22 @@ const MovieDetailPage = () => {
       )}
 
       {!isPending && movieDetail && (
-        <div>
-          <h2>{movieDetail.title}</h2>
-          <p>{movieDetail.overview}</p>
-        </div>
+        <>
+          <div className="flex flex-col">
+            <h2>{movieDetail.title}</h2>
+            <div>평균 {movieDetail.vote_average}</div>
+            <div>{movieDetail.release_date}</div>
+            <div>{movieDetail.runtime} 분</div>
+            <div>{movieDetail.overview}</div>
+            <img
+              src={`https://image.tmdb.org/t/p/w500${movieDetail.poster_path}`}
+              alt={movieDetail.title}
+            />
+          </div>
+          <div>
+            <h2>감독/출연</h2>
+          </div>
+        </>
       )}
     </>
   );
