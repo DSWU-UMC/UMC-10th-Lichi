@@ -1,4 +1,3 @@
-import React from "react";
 import type { MovieCreditResponse } from "../types/MovieDetail";
 
 const Credits = ({ credits }: { credits: MovieCreditResponse | null }) => {
